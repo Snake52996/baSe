@@ -13,4 +13,6 @@ shlib = library('baSe', 'bitio.c', 'heap.c', 'keyvalue_pair.c', 'list.c', 'RAII.
 
 # Make this library usable from the system's
 # package manager.
+pkg = import('pkgconfig')
 install_headers('bitio.h', 'heap.h', 'keyvalue_pair.h', 'list.h', 'RAII.h', 'vector.h', 'hashtable.h', subdir : 'baSe')
+pkg.generate(shlib)
